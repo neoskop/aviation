@@ -1,0 +1,22 @@
+.tippy-popper {
+  z-index: var(--tooltip-z-index);
+
+  & .tippy-tooltip.light-theme {
+    padding: 8px var(--spacing-m);
+    border-radius: var(--border-radius);
+    box-shadow: var(--card-shadow-1);
+
+    &  [x-circle] {
+      background-color: var(--color-white) !important;
+    }
+
+    & .tippy-tooltip-content {
+      color: var(--color-primary);
+      font-family: var(--base-font-family);
+      font-size: var(--font-size-s);
+      font-weight: var(--font-weight-semibold);
+      line-height: var(--line-height);
+      text-transform: uppercase;
+    }
+  }
+}

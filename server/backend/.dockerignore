@@ -1,0 +1,12 @@
+dist/
+doc/
+.idea/
+.vscode/
+.git/
+ts-node/
+compiled/
+node_modules/
+.dockerignore
+.editorconfig
+docker-compose.yml
+Dockerfile

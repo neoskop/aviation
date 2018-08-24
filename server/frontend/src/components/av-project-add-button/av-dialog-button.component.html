@@ -1,0 +1,11 @@
+<div class="m-dialog-button">
+  <button class="m-dialog-button__button" (click)="toggle()" #button>
+    <svg class="m-icon">
+      <use xlink:href="#icon-add"></use>
+    </svg>
+  </button>
+
+  <div class="m-dialog-button__dialog m-bubble" #bubble>
+    <ng-content></ng-content>
+  </div>
+</div>

@@ -1,0 +1,6 @@
+.idea/
+node_modules/
+dist/
+backend/doc/
+data/
+*.iml

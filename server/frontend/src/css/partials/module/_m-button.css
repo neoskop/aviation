@@ -1,0 +1,28 @@
+.m-button {
+  height: 36px;
+  padding-right: var(--spacing-l);
+  padding-left: var(--spacing-l);
+  border-radius: var(--border-radius);
+  color: var(--color-primary);
+  background-color: var(--color-white);
+  font-family: var(--base-font-family);
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height);
+  text-align: center;
+  white-space: nowrap;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.8;
+  }
+}
+
+.m-button--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}

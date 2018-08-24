@@ -1,0 +1,22 @@
+.m-dialog-button {
+  position: relative;
+}
+
+.m-dialog-button__button {
+  display: block;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.m-dialog-button__dialog {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  min-width: 320px;
+  margin-top: var(--spacing-xl);
+  transform: translateX(-50%);
+  pointer-events: none;
+  opacity: 0;
+}

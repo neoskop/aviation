@@ -1,0 +1,20 @@
+.m-card-grid {
+  padding-right: var(--bleed-x);
+  padding-left: var(--bleed-x);
+  transition: opacity var(--duration-medium);
+  transition-delay: 0s;
+  pointer-events: none;
+  opacity: 0;
+
+  & > div {
+    max-width: var(--max-width);
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.m-card-grid--active {
+  transition-delay: 1s;
+  pointer-events: auto;
+  opacity: 1;
+}

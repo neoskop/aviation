@@ -1,0 +1,6 @@
+.m-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+}

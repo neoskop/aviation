@@ -1,0 +1,22 @@
+version: '3'
+services:
+  sut:
+    build: .
+    environment:
+      ENDPOINT_TEST_URL: http://backend:8080
+    depends_on:
+      - backend
+      - mongo
+  backend:
+    image: neoskop/aviation:backend
+    command: npm run start:prod
+    environment:
+      NODE_ENV: test
+    depends_on:
+      - mongo
+#    logging:
+#      driver: "none"
+  mongo:
+    image: mongo:3.4.4
+    logging:
+      driver: "none"

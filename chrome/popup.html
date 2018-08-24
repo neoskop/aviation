@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Aviation</title>
+    <link rel="stylesheet" href="assets/css/material.min.css">
+    <script src="assets/js/material.min.js"></script>
+    <script src="assets/js/popup.js"></script>
+    <style>
+    </style>
+  </head>
+  <body>
+    <style>
+    .aviation-card.mdl-card {
+      width: 320px;
+      height: 320px;
+    }
+
+    .aviation-card > .mdl-card__title {
+      color: #fff;
+      background:
+        url('assets/img/logo-large.png') bottom right 15% no-repeat #0073c4;
+    }
+    </style>
+
+    <div class="aviation-card mdl-card mdl-shadow--2dp">
+      <div class="mdl-card__title mdl-card--expand">
+        <h2 class="mdl-card__title-text">Aviation</h2>
+      </div>
+      <div class="mdl-card__supporting-text">
+        Will inject <tt>X-Aviation-Preview</tt> into all outgoing requests if enabled. This behaviour is just a proof of concept and <em>will</em> change soon.
+      </div>
+      <div class="mdl-card__actions mdl-card--border">
+        <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect" for="preview-feature-switch">
+          <input type="checkbox" id="preview-feature-switch" class="mdl-switch__input" checked>
+          <span class="mdl-switch__label">Preview all features</span>
+        </label>
+      </div>
+    </div>
+  </body>
+</html>

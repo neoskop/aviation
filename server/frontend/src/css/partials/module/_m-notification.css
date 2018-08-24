@@ -1,0 +1,19 @@
+.m-notification.simple-notification {
+  padding: var(--spacing-m);
+  border-radius: var(--border-radius);
+  box-shadow: var(--card-shadow-1);
+
+  & .sn-title {
+    color: var(--color-white);
+    font-family: var(--base-font-family);
+    font-size: var(--font-size-m);
+    font-weight: var(--font-weight-semibold);
+    line-height: var(--line-height);
+    text-transform: uppercase;
+    letter-spacing: -0.1px;
+  }
+
+  & .icon {
+    display: none;
+  }
+}

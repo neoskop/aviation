@@ -1,0 +1,21 @@
+<form class="m-form">
+  <div class="m-form__group">
+    <label for="projectTitle" class="m-form__group-label">Project Title</label>
+    <div class="m-form__group-control">
+      <input type="text" id="projectTitle" name="projectTitle" [(ngModel)]="projectTitle" required>
+    </div>
+  </div>
+  <div class="m-form__group">
+    <label for="projectToken" class="m-form__group-label">Project Access Token</label>
+    <div class="m-form__group-control">
+      <input type="text" id="projectToken" name="projectToken" [(ngModel)]="projectToken">
+    </div>
+  </div>
+  <div class="m-form__group m-form__group">
+    <div class="m-form__group-control">
+      <button (click)="createProject()" class="m-button m-button--primary">
+        Create Project
+      </button>
+    </div>
+  </div>
+</form>

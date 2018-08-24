@@ -1,0 +1,82 @@
+<header class="m-toolbar m-toolbar--fixed" [class.m-toolbar--active]="loggedIn">
+  <div>
+    <section class="m-toolbar__section m-toolbar__section--align-start">
+      <h1 class="m-logo"><strong>Aviation</strong> Dashboard <em>beta</em></h1>
+    </section>
+    <section class="m-toolbar__section">
+      <av-dialog-button #projectCreationDialog>
+        <av-project-creation-form (submit)="projectCreationDialog.hideDialog()"></av-project-creation-form>
+      </av-dialog-button>
+    </section>
+    <section class="m-toolbar__section m-toolbar__section--align-end">
+      <img (click)="logout()"
+           *ngIf="user"
+           title="Sign out"
+           [tippy]="{ position: 'bottom' }"
+           class="m-avatar"
+           width="36"
+           height="36"
+           [src]="user.photo"
+           alt="User Portrait">
+    </section>
+  </div>
+</header>
+
+<main>
+  <av-slider>
+    <div left class="m-card-grid" [class.m-card-grid--active]="loggedIn">
+      <div avMasonry>
+        <av-project-card *ngFor="let project of projects"
+                         [project]="project"
+                         (featureSelected)="featureEditView(project, $event)"></av-project-card>
+      </div>
+    </div>
+
+    <div right>
+      <av-feature-form *ngIf="currentFeature"
+                       [project]="currentProject"
+                       [feature]="currentFeature"></av-feature-form>
+    </div>
+  </av-slider>
+</main>
+
+<main class="m-login-mask" [class.m-login-mask--active]="loggedOut">
+  <div>
+    <svg class="m-login-mask__aviation"
+         width="76px"
+         height="111px"
+         viewBox="0 0 76 111"
+         version="1.1"
+         xmlns="http://www.w3.org/2000/svg">
+      <polygon id="Path-4" fill="#D8F6F1" points="38.2222222 101 46 108 31 108"></polygon>
+      <polygon id="Path-4" fill="#D8F6F1" points="4 11 72 11 64.3 23 11.7 23"></polygon>
+      <polygon id="Path-4" fill="#FFFFFF" points="4 11 12.7241379 11 22 23 11.7241379 23"></polygon>
+      <path d="M67.7641328,0.55518704 L39.555187,28.7641328 C38.8149377,29.5043822 38.8149377,30.7045636 39.555187,31.444813 C40.2954364,32.1850623 41.4956178,32.1850623 42.2358672,31.444813 L70.444813,3.23586721 C71.1850623,2.49561782 71.1850623,1.29543643 70.444813,0.55518704 C69.7045636,-0.185062347 68.5043822,-0.185062347 67.7641328,0.55518704 Z"
+            id="Line"
+            fill="#430961"
+            fill-rule="nonzero"></path>
+      <circle id="Oval-Copy" fill="#FF4B8C" cx="61" cy="10" r="7"></circle>
+      <circle id="Oval-Copy-2" fill="#FF4B8C" cx="49" cy="22" r="7"></circle>
+      <path d="M15.6558832,111 C13.2631095,111 13.0523561,107.414735 15.4279499,107.122477 C29.639499,105.374104 36.2253679,100.94553 36.0727457,94.0884202 L39.8828177,94 C40.0365874,100.908667 46.8343424,105.370886 61.0720501,107.122477 C63.4476439,107.414735 63.2368905,111 60.8441168,111 L15.6558832,111 Z M45.75,107 C42.3042514,105.418641 39.7602047,103.421996 38.1492406,101 C36.626069,103.421688 34.1481123,105.418523 30.75,107 L45.75,107 Z"
+            id="Path"
+            fill="#24204F"
+            fill-rule="nonzero"></path>
+      <polygon id="Line" fill="#24204F" fill-rule="nonzero" points="40 95 40 61 36 61 36 95"></polygon>
+      <polygon id="Path-3" fill-opacity="0.9" fill="#643C78" points="12 23 64 23 38 61"></polygon>
+      <path d="M71,12 L5,12 L38,61 L71,12 Z M0.435617281,11.9039669 C-0.335615054,10.7727965 -0.05567147,9.22241369 1.06088878,8.44108985 C1.47137397,8.15384886 1.95844175,8 2.45732845,8 L73.5428961,8 C74.8999171,8 76,9.11447739 76,10.4892549 C76,10.9946695 75.8481382,11.4881105 75.5646072,11.9039669 L38.0001123,67 L0.435617281,11.9039669 Z"
+            id="Path-2"
+            fill="#24204F"
+            fill-rule="nonzero"></path>
+      <path d="M21.2929785,30.6016311 L34.0927674,49.3013999 C34.6023484,50.0458688 35.600666,50.2233722 36.3225724,49.6978647 C37.0444787,49.1723572 37.2166024,48.1428378 36.7070215,47.3983689 L23.9072326,28.6986001 C23.3976516,27.9541312 22.399334,27.7766278 21.6774276,28.3021353 C20.9555213,28.8276428 20.7833976,29.8571622 21.2929785,30.6016311 Z"
+            id="Line"
+            fill="#FFFFFF"
+            fill-rule="nonzero"></path>
+    </svg>
+    <h1 class="m-login-mask__logo m-logo m-logo--large"><strong>Aviation</strong> Dashboard <em>beta</em></h1>
+    <av-expanding-button *ngIf="loggedOut" destination="http://localhost:8080/auth/google">
+      Sign in with Google
+    </av-expanding-button>
+  </div>
+</main>
+
+<simple-notifications [options]="notificationConfig"></simple-notifications>

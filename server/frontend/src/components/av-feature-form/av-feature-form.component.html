@@ -1,0 +1,112 @@
+<form class="m-form m-form-grid">
+  <div>
+    <div class="m-form-grid__row">
+      <div class="m-form-grid__item">
+        <div class="m-form__group m-form__group">
+          <label for="featureTitle" class="m-form__group-label">Project Title</label>
+          <div class="m-form__group-control">
+            <input type="text" id="featureTitle" name="featureTitle" [(ngModel)]="featureCopy.title" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-form-grid__item">
+        <div class="m-form__group m-form__group">
+          <label for="featureName" class="m-form__group-label">Project ID</label>
+          <div class="m-form__group-control">
+            <input class="m-clipboard-input"
+                   type="text"
+                   id="featureName"
+                   name="featureName"
+                   avClipboard
+                   tippy
+                   title="Click to copy to clipboard"
+                   [(ngModel)]="featureCopy.name"
+                   required>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-form-grid__item">
+        <div class="m-form__group m-form__group">
+          <label for="featureCreatedAt" class="m-form__group-label">Created At</label>
+          <div class="m-form__group-control">
+            <input type="text"
+                   id="featureCreatedAt"
+                   name="featureCreatedAt"
+                   [value]="featureCopy.createdAt | date : 'dd.MM.yyyy &ndash; hh:mm'"
+                   disabled>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="m-form-grid__row">
+      <div class="m-form-grid__item m-form-grid__item--2-3">
+        <div class="m-form__group m-form__group">
+          <label for="featureTitle" class="m-form__group-label">Activation Script</label>
+          <div class="m-form__group-control">
+            <ace-editor name="featureFunctionCode"
+                        class="m-ace-editor"
+                        [(ngModel)]="featureCopy.functionCode"
+                        #scriptEditor
+                        style="height: 300px;"></ace-editor>
+          </div>
+        </div>
+      </div>
+
+      <div class="m-form-grid__item">
+        <div class="m-form__group m-form__group">
+          <label for="featureTitle" class="m-form__group-label">Preview URLs</label>
+          <div class="m-form__group-control">
+            <ul class="m-feature-list">
+              <li *ngFor="let exampleUrl of feature.exampleUrls" class="m-feature-list__item">
+                <div class="m-feature">
+                  <svg class="m-feature__icon m-icon m-icon--large">
+                    <use xlink:href="#icon-caret-right"></use>
+                  </svg>
+                  <h3 class="m-feature__title">
+                    <a [href]="exampleUrl.url" target="_blank">{{exampleUrl.url}}</a>
+                  </h3>
+                  <div class="m-feature__toggle">
+                    <button type="button" (click)="deleteExampleUrl(exampleUrl)">
+                      <svg class="m-icon"><use xlink:href="#icon-trash"></use></svg>
+                    </button>
+                  </div>
+                </div>
+              </li>
+              <li class="m-feature-list__item">
+                <div class="m-feature">
+                  <svg class="m-feature__icon m-icon m-icon--large">
+                    <use xlink:href="#icon-caret-right"></use>
+                  </svg>
+                  <input [(ngModel)]="newExampleUrl"
+                         (keypress)="createExampleUrl($event)"
+                         name="newExampleUrl"
+                         class="m-feature__title-input"
+                         type="text"
+                         placeholder="New Preview URL &hellip;">
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="m-form-grid__row">
+      <div class="m-form-grid__item">
+        <div class="m-form__group m-form__group">
+          <div class="m-form__group-control">
+            <div>
+              <button class="m-button" type="button" (click)="updateFeature()" [disabled]="busy">Save Changes</button>
+            </div>
+            <div>
+              <av-delete-button label="Delete Feature" (confirm)="deleteFeature()"></av-delete-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

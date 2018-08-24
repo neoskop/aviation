@@ -1,0 +1,22 @@
+.m-switch {
+  & .switch {
+    width: 48px !important;
+    height: 24px !important;
+    border-color: var(--color-white) !important;
+    background-color: color(#000 alpha(0.3)) !important;
+
+    &.checked > small {
+      left: 3px !important;
+      background-color: #57d9a3 !important;
+    }
+
+    & > small {
+      top: 3px !important;
+      left: 26px !important;
+      width: 18px !important;
+      height: 18px !important;
+      background-color: #ff7542 !important;
+      box-shadow: none !important;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+version: "3"
+services:
+  frontend:
+    build: ./frontend
+    ports:
+     - "3000:3000"
+    volumes:
+     - ./frontend/src:/home/node/src:ro
+  backend:
+    build: ./backend
+    environment:
+     FRONTEND_URL: http://localhost:3000
+     BACKEND_URL: http://localhost:8080
+     GOOGLE_CLIENT_ID: 406556468006-rvj0cd7rqku4k26661rks9r5kgajaeaf.apps.googleusercontent.com
+     GOOGLE_CLIENT_SECRET: aXa9VMi3YN0c05FQHSdXqa_N
+    ports:
+     - "8080:8080"
+    volumes:
+     - ./backend/src:/home/node/src:ro
+  mongo:
+    image: neoskop/mongo
+    environment:
+      PROJECT_PREFIX: "aviation"
+      DISABLE_BACKUPS: "true"
+    volumes:
+    - ./data:/data/db
+  mongoclient:
+    image: mongoclient/mongoclient:2.1.0
+    ports:
+    - "3001:3000"
+    environment:
+      MONGO_URL: mongodb://mongo:27017/aviation

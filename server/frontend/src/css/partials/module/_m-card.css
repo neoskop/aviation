@@ -1,0 +1,70 @@
+.m-card {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  min-height: 235px;
+  padding-top: var(--spacing-m);
+  padding-bottom: var(--spacing-m);
+  border-radius: var(--border-radius);
+  background-color: var(--color-secondary);
+  flex-direction: column;
+  transition: box-shadow var(--duration-short), background-color var(--duration-short);
+  box-shadow: var(--card-shadow-1);
+
+  &:hover {
+    box-shadow: var(--card-shadow-2);
+  }
+}
+
+.m-card__section {
+  padding: var(--spacing-xl);
+}
+
+.m-card__title {
+  display: inline-flex;
+  width: 100%;
+  min-height: calc(var(--font-size-m) * var(--line-height) * 2);
+  justify-content: center;
+  align-items: center;
+  font-size: var(--font-size-m);
+  font-weight: var(--font-weight-semibold);
+  text-align: center;
+  flex-direction: column;
+
+  & > em {
+    display: block;
+    margin-top: var(--spacing-s);
+    font-size: var(--font-size-s);
+  }
+}
+
+.m-card__flip-button {
+  position: absolute;
+  z-index: 3;
+  right: var(--spacing-m);
+  bottom: var(--spacing-m);
+  font-size: var(--font-size-s);
+
+  &:focus {
+    outline: none;
+  }
+
+  & > .m-icon {
+    position: relative;
+    top: -1px;
+  }
+}
+
+.m-card__delete-button {
+  position: absolute;
+  z-index: 3;
+  bottom: var(--spacing-m);
+  left: var(--spacing-m);
+}
+
+.m-card__layer--back {
+  position: absolute;
+  right: 0;
+  left: 0;
+  width: 100%;
+}

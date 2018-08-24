@@ -1,0 +1,14 @@
+<button (click)="trigger()" class="m-delete-button" type="button">
+  <svg class="m-icon"
+       width="24px"
+       height="24px"
+       viewBox="0 0 24 24"
+       version="1.1"
+       xmlns="http://www.w3.org/2000/svg">
+    <path d="M6,19 C6,20.1 6.9,21 8,21 L16,21 C17.1,21 18,20.1 18,19 L18,7 L6,7 L6,19 Z" fill="currentcolor"></path>
+    <polygon fill="#FFFFFF" points="8.46 11.88 9.87 10.47 12 12.59 14.12 10.47 15.53 11.88 13.41 14 15.53 16.12 14.12 17.53 12 15.41 9.88 17.53 8.47 16.12 10.59 14"></polygon>
+    <polygon #trashTop id="Path" fill="currentcolor" points="15.5 4 14.5 3 9.5 3 8.5 4 5 4 5 6 19 6 19 4"></polygon>
+  </svg>
+  <span *ngIf="label" #buttonLabel>{{label}}</span>
+  <span #trashLabel>Confirm</span>
+</button>

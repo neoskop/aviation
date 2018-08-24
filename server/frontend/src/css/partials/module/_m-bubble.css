@@ -1,0 +1,26 @@
+.m-bubble {
+  position: relative;
+  max-width: 320px;
+  padding: var(--spacing-l);
+  border-radius: var(--border-radius);
+  color: var(--color-black);
+  background-color: var(--color-white);
+  box-shadow: var(--card-shadow-2);
+
+  &:before {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid var(--color-white);
+    border-left: 10px solid transparent;
+    content: '';
+    transform: translateX(-50%);
+  }
+
+  & input[type=text] {
+    background-color: var(--color-primary);
+  }
+}

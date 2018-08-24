@@ -1,0 +1,42 @@
+.m-login-mask {
+  position: absolute;
+  z-index: var(--login-z-index);
+  top: 50%;
+  left: 50%;
+  padding-right: var(--bleed-x);
+  padding-left: var(--bleed-x);
+  transform: translate3d(-50%, -50%, 0);
+  pointer-events: none;
+
+  & > div {
+    max-width: var(--max-width);
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+  }
+}
+
+.m-login-mask--active {
+  pointer-events: auto;
+
+  & .m-login-mask__aviation {
+    opacity: 1;
+  }
+
+  & .m-login-mask__logo {
+    opacity: 1;
+  }
+}
+
+.m-login-mask__aviation {
+  margin-bottom: var(--spacing-xl);
+  transition: opacity var(--duration-medium);
+  opacity: 0;
+}
+
+.m-login-mask__logo {
+  margin-bottom: calc(var(--spacing-xl) * 3);
+  transition: opacity var(--duration-medium);
+  transition-delay: var(--duration-short);
+  opacity: 0;
+}

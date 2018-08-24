@@ -1,0 +1,24 @@
+frontend:
+  command: nginx
+  image: neoskop/aviation:frontend
+  environment:
+     BACKEND_URL: https://aviation-api.infra.neoskop.cloud
+  tags:
+    - infrastructure
+backend:
+  image: neoskop/aviation:backend
+  environment:
+   FRONTEND_URL: https://aviation.infra.neoskop.cloud
+   BACKEND_URL: https://aviation-api.infra.neoskop.cloud
+   GOOGLE_CLIENT_ID: 406556468006-rvj0cd7rqku4k26661rks9r5kgajaeaf.apps.googleusercontent.com
+   GOOGLE_CLIENT_SECRET: aXa9VMi3YN0c05FQHSdXqa_N
+  tags:
+    - infrastructure
+mongo:
+  environment:
+    PROJECT_PREFIX: aviation
+  image: neoskop/mongo
+  tags:
+    - infrastructure
+  volumes:
+    - /data/db

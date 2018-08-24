@@ -1,0 +1,13 @@
+version: "3"
+services:
+  sut:
+    build: .
+    command: "yarn run test"
+    environment:
+      NODE_ENV: "test"
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo:3.4.4
+    logging:
+      driver: "none"

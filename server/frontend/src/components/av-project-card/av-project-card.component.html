@@ -1,0 +1,111 @@
+<div #card class="m-card" [ngStyle]="{ 'background-color': project.color }">
+  <div class="m-card__layer" [ngStyle]="{ 'z-index': (activeLayer === 'front') ? 2 : 1 }" #front>
+    <section class="m-card__section" #frontSection>
+      <h2 class="m-card__title">
+        {{project.title}}
+        <em>{{project.createdAt | date : 'dd.MM.yyyy &ndash; hh:mm'}}</em>
+      </h2>
+    </section>
+    <section class="m-card__section" #frontSection>
+      <ul class="m-feature-list">
+        <li *ngFor="let feature of project.features" class="m-feature-list__item">
+          <div class="m-feature">
+            <svg class="m-feature__icon m-icon m-icon--large">
+              <use xlink:href="#icon-caret-right"></use>
+            </svg>
+            <h3 (click)="selectFeature(feature)" class="m-feature__title">{{feature.title}}</h3>
+            <button *ngIf="feature.functionCode"
+                 (click)="toggleFeatureFunction(feature)"
+                 [class.m-feature__fn-indicator--inactive]="!feature.functionEnabled"
+                 class="m-feature__fn-indicator">
+              <svg class="m-icon">
+                <use xlink:href="#icon-function"></use>
+              </svg>
+            </button>
+            <div class="m-feature__toggle">
+              <ui-switch class="m-switch"
+                         size="small"
+                         [disabled]="feature.functionEnabled !== undefined && feature.functionEnabled"
+                         (change)="toggleFeature(feature, $event)"
+                         [(ngModel)]="feature.enabled"></ui-switch>
+            </div>
+          </div>
+        </li>
+        <li class="m-feature-list__item">
+          <div class="m-feature">
+            <svg class="m-feature__icon m-icon m-icon--large">
+              <use xlink:href="#icon-caret-right"></use>
+            </svg>
+            <input class="m-feature__title-input"
+                   [(ngModel)]="newFeatureTitle"
+                   (keypress)="createFeature($event)"
+                   type="text"
+                   placeholder="New Feature &hellip;">
+          </div>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <div class="m-card__layer m-card__layer--back" [ngStyle]="{ 'z-index': (activeLayer === 'back') ? 2 : 1 }" #back>
+    <section class="m-card__section" #backSection>
+      <form class="m-form">
+        <div class="m-form__group m-form__group--1-2">
+          <label for="projectTitle" class="m-form__group-label">Project Title</label>
+          <div class="m-form__group-control">
+            <input type="text" id="projectTitle" name="projectTitle" [(ngModel)]="project.title" required>
+          </div>
+        </div>
+        <div class="m-form__group m-form__group--1-2">
+          <label for="projectToken" class="m-form__group-label">Project Access Token</label>
+          <div class="m-form__group-control">
+            <input class="m-clipboard-input"
+                   type="text"
+                   id="projectToken"
+                   name="projectToken"
+                   [(ngModel)]="project.token"
+                   avClipboard
+                   tippy
+                   title="Click to copy to clipboard"
+                   required>
+          </div>
+        </div>
+        <div class="m-form__group m-form__group--1-2">
+          <label for="projectName" class="m-form__group-label">Project ID</label>
+          <div class="m-form__group-control">
+            <input class="m-clipboard-input"
+                   type="text"
+                   id="projectName"
+                   name="projectName"
+                   [(ngModel)]="project.name"
+                   avClipboard
+                   tippy
+                   title="Click to copy to clipboard"
+                   required>
+          </div>
+        </div>
+        <div class="m-form__group m-form__group--1-2">
+          <label for="projectColor" class="m-form__group-label">Color</label>
+          <div class="m-form__group-control">
+            <input type="text" id="projectColor" name="projectColor" [(ngModel)]="project.color" required>
+          </div>
+        </div>
+      </form>
+    </section>
+  </div>
+
+  <button (click)="flip()" class="m-card__flip-button" #settingsButton>
+    <svg class="m-icon">
+      <use xlink:href="#icon-settings"></use>
+    </svg>
+  </button>
+
+  <button (click)="updateProject(); flip()" class="m-card__flip-button" #saveButton>
+    Save Changes
+    <svg class="m-icon">
+      <use xlink:href="#icon-check"></use>
+    </svg>
+  </button>
+
+  <av-delete-button class="m-card__delete-button" (confirm)="deleteProject()" #deleteButton></av-delete-button>
+</div>

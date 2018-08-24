@@ -1,0 +1,16 @@
+<div class="l-slider">
+  <div #left class="l-slider__slide">
+    <ng-content select="[left]"></ng-content>
+  </div>
+  <div #right class="l-slider__slide">
+    <div class="l-slider__tools">
+      <div>
+        <button class="l-slider__back-button" (click)="toggle()">
+          <svg class="m-icon"><use xlink:href="#icon-arrow-left"></use></svg>
+          <span>Back to Projects</span>
+        </button>
+      </div>
+    </div>
+    <ng-content select="[right]"></ng-content>
+  </div>
+</div>

@@ -1,0 +1,231 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Aviation",
+		"_postman_id": "2c934d11-13f7-db29-e0a0-18ab044294a5",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get auth info",
+			"request": {
+				"url": "http://localhost:8080/auth",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "list projects",
+			"request": {
+				"url": "http://localhost:8080/projects",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "get project",
+			"request": {
+				"url": "http://localhost:8080/projects/example-1",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create project",
+			"request": {
+				"url": "http://localhost:8080/projects",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "example-1",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "Example One",
+							"description": "",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "sup3rs3cr3t",
+							"type": "text"
+						},
+						{
+							"key": "color",
+							"value": "#4d2860",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update project",
+			"request": {
+				"url": "http://localhost:8080/projects/example-1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "example-1",
+							"type": "text"
+						},
+						{
+							"key": "token",
+							"value": "sup3rs3cr3t",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete project",
+			"request": {
+				"url": "http://localhost:8080/projects/example-1",
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "list features as API client",
+			"request": {
+				"url": "http://localhost:8080/features",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer sup3rs3cr3t",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "list features as admin",
+			"request": {
+				"url": "http://localhost:8080/projects/example-1/features",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "create feature",
+			"request": {
+				"url": "http://localhost:8080/projects/example-1/features",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "name",
+							"value": "test-feature-1",
+							"type": "text"
+						},
+						{
+							"key": "enabled",
+							"value": "true",
+							"type": "text"
+						},
+						{
+							"key": "title",
+							"value": "Test Feat. One",
+							"description": "",
+							"type": "text"
+						}
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "update feature",
+			"request": {
+				"url": "http://localhost:8080/projects/example-1/features/test-feature-1",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"test-feature-1\",\n  \"description\": \"Awesome new feature!\",\n  \"enabled\": false,\n  \"title\": \"Test Feature One\",\n  \"exampleUrls\": [\n    {\n      \"url\": \"test\"\n    },\n    {\n      \"url\": \"http://example.org\"\n    }\n  ],\n  \"functionCode\": \"alert('XSS!');\",\n  \"functionEnabled\": true\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "delete feature",
+			"request": {
+				"url": "http://localhost:8080/projects/example-1/features/test-feature-1",
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

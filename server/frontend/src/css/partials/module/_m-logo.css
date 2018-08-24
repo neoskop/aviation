@@ -1,0 +1,25 @@
+.m-logo {
+  position: relative;
+  font-size: var(--font-size-l);
+  font-weight: var(--font-weight-light);
+  line-height: 1.1;
+  white-space: nowrap;
+
+  & > strong {
+    font-weight: var(--font-weight-semibold);
+  }
+
+  & > em {
+    display: inline-block;
+    font-size: var(--font-size-s);
+    font-weight: var(--font-weight-semibold);
+  }
+}
+
+.m-logo.m-logo--large {
+  font-size: var(--font-size-xl);
+
+  & > em {
+    font-size: var(--font-size-m);
+  }
+}

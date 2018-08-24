@@ -1,0 +1,8 @@
+.m-clipboard-input {
+  padding-right: 36px;
+  background-image: url(../../../assets/images/copy.svg);
+  background-repeat: no-repeat;
+  background-position: right var(--spacing-m) center;
+  background-size: 16px;
+  cursor: pointer;
+}
