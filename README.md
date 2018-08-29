@@ -17,8 +17,8 @@ Shake well in a mixing glass with cracked ice, strain and serve.
 
 In contrast to the more common feature toggle libraries, _Aviation_ relies on an external server to provide the library with information whether features are enabled or not. The project is therefore divided in a [server component](./server) and client libraries for different languages. Currently the following languages are supported:
 
-- [Java](./client/java)
-- [JavaScript/Typescript](./client/typescript)
+- [Java](./clients/java)
+- [JavaScript/Typescript](./clients/typescript)
 
 See the README files of those submodules on how to integrate those libraries into your project.
 
