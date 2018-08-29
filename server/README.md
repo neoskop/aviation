@@ -1,21 +1,8 @@
-![Aviation](https://bytebucket.org/neoskop/aviation-client-typescript/raw/master/logo.png)
+![Aviation](../logo.png)
 
-# Aviation #
+# Aviation Server #
 
-_Aviation_ is a web application to enable **feature toggles as a service**.
-_Aviation_ consists of a backend and a dashboard - both of which are
-included in this repository - and client libraries to access the web
-application. The currently available client libraries are:
-
-- [aviation-client-java](https://bitbucket.org/neoskop/aviation-client-java)
-- [aviation-client-typescript](https://bitbucket.org/neoskop/aviation-client-typescript)
-
-_Aviation_ is also a classy cocktail which you should prepare like so:
-
-- 5 cl gin
-- 1.5 cl lemon juice
-- 1 cl maraschino liqueur
-- 0.7 cl Crème de Violette
+This is the server component which provides a frontend to configure feature toggles and an API for client libraries to check against.
 
 ## Quick start ##
 

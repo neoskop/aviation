@@ -1,8 +1,8 @@
-![Aviation](logo.png)
+![Aviation](../../logo.png)
 
 # Aviation Client for Java ≥ 8 #
 
-This library enables you to check against an [Aviation Server](https://bitbucket.org/neoskop/aviation) whether a feature is supposedly enabled or not.
+This library enables you to check against an [Aviation Server](https://github.com/neoskop/aviation) whether a feature is supposedly enabled or not.
 
 ## Usage ##
 
@@ -12,7 +12,7 @@ To add the library to your project by adding the following snippet to your `pom.
 <dependency>
     <groupId>de.neoskop.aviation</groupId>
     <artifactId>aviation-client</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.4</version>
 </dependency>
 ```
 

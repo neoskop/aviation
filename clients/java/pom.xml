@@ -30,9 +30,9 @@
     </distributionManagement>
 
     <scm>
-        <connection>scm:git:ssh://git@bitbucket.org/neoskop/aviation-client-java.git</connection>
-        <developerConnection>scm:git:ssh://git@bitbucket.org/neoskop/aviation-client-java.git</developerConnection>
-        <url>https://bitbucket.org/neoskop/aviation-client-java.git</url>
+        <connection>scm:git:ssh://git@github.com/neoskop/aviation-client-java.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/neoskop/aviation-client-java.git</developerConnection>
+        <url>https://github.com/neoskop/aviation-client-java.git</url>
         <tag>HEAD</tag>
     </scm>
 

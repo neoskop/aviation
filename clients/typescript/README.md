@@ -1,10 +1,10 @@
-![Aviation](https://bytebucket.org/neoskop/aviation-client-typescript/raw/master/logo.png)
+![Aviation](../../logo.png)
 
 # Aviation Client for Typescript #
 
 ![npm version](https://img.shields.io/npm/v/@neoskop/aviation-client.svg?colorA=333333&colorB=573066) ![npm download per month](https://img.shields.io/npm/dm/@neoskop/aviation-client.svg?colorA=333333&colorB=e1d259) ![npm license](https://img.shields.io/npm/l/express.svg?colorA=333333&colorB=4aa4ce)
 
-This library enables you to check against an [Aviation Server](https://bitbucket.org/neoskop/aviation) whether a feature is supposedly enabled or not.
+This library enables you to check against an [Aviation Server](https://github.com/neoskop/aviation) whether a feature is supposedly enabled or not.
 
 ## Usage ##
 
