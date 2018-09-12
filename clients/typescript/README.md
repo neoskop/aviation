@@ -35,5 +35,5 @@ client.feature('test-feature-1').then(f => {
 To run integration tests in case you checked out the repository (awesome!):
 
 ```sh
-$ docker pull neoskop/aviation:backend && docker-compose -f docker-compose.test.yml up --abort-on-container-exit --build
+$ docker-compose -f docker-compose.test.yml up --abort-on-container-exit --build
 ```

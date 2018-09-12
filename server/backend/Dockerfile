@@ -1,4 +1,4 @@
-FROM node:8.1.2
+FROM node:8.12.0
 LABEL maintainer "devops@neoskop.de"
 
 WORKDIR /home/node
