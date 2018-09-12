@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "author": "Arne Diekmann <diekmann@neoskop.de>",
+  "repository": "https://github.com/neoskop/aviation",
+  "homepage": "https://neolabs.io",
   "license": "Apache-2.0",
   "apidoc": {
     "name": "Aviation API",

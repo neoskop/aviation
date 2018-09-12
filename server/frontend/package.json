@@ -3,6 +3,8 @@
   "version": "0.0.0",
   "main": "index.js",
   "author": "Philipp Siekmann <siekmann@neoskop.de>",
+  "repository": "https://github.com/neoskop/aviation",
+  "homepage": "https://neolabs.io",
   "license": "Apache-2.0",
   "scripts": {
     "clean": "rimraf dist node_modules",
