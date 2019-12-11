@@ -9,7 +9,7 @@
     <properties>
         <java.version>1.8</java.version>
         <okhttp.version>3.8.1</okhttp.version>
-        <retrofit.version>2.3.0</retrofit.version>
+        <retrofit.version>2.7.0</retrofit.version>
         <caffeine.version>2.5.2</caffeine.version>
         <maven-compiler-plugin.version>2.3.2</maven-compiler-plugin.version>
         <j2v8.version>4.6.0</j2v8.version>
