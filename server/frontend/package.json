@@ -11,7 +11,9 @@
     "start": "webpack-dev-server --progress --watch-poll --history-api-fallback true --config webpack/webpack.dev.js --host 0.0.0.0 --port 3000",
     "build": "webpack --config webpack/webpack.prod.js --progress --profile --bail",
     "test": "mocha",
-    "lint": "tslint src/**/*.ts"
+    "lint": "tslint src/**/*.ts",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "@angular/animations": "4.2.3",
@@ -35,7 +37,8 @@
     "reflect-metadata": "0.1.10",
     "rxjs": "5.3.0",
     "tippy.js": "1.0.0",
-    "zone.js": "0.8.11"
+    "zone.js": "0.8.11",
+    "snyk": "^1.316.1"
   },
   "devDependencies": {
     "@ngtools/webpack": "1.4.0",
@@ -68,5 +71,6 @@
   },
   "engines": {
     "node": "8.12.0"
-  }
+  },
+  "snyk": true
 }
